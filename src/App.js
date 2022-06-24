@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import Formulario from './Components/Formulario';
+import Header from './Components/Header';
 
 function App() {
+  // Definir el state
+  // Se pone acá para poder usarse luego
+  // Los componentes pueden ir del padre al hijo pero nunca del hijo al padre
+  const [cantidad, setCantidad] = useState(0);
+
+  const [plazo, setPlazo] = useState('')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header titulo='Cotizador de Prestamos' />
+
+      <div className='container'>
+          <Formulario cantidad={cantidad} setCantidad={setCantidad} plazo={plazo} setPlazo={setPlazo}/>
+      </div>
+      
+    </>
   );
 }
+
+
+
 
 export default App;
