@@ -22,7 +22,7 @@ h1 {
   padding: 1rem;
   border-radius: 1rem;
   margin-top: 2rem;
-  height: 80vh;
+  height: 85vh;
 }
 
 form, .mensajes {
@@ -35,7 +35,7 @@ form, .mensajes {
 }
 .resultado {
   border: 2px solid #00b0d7;
-  padding: 3rem 0;
+  padding: 1rem 0;
 }
 form label {
   text-align: center;
@@ -59,3 +59,4 @@ input[type="submit"]:disabled{
 .resultado p {
   margin: 0;
 }
+

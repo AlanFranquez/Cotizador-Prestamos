@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { calcularTotal } from '../helpers';
 
-function Formulario({cantidad, setCantidad, plazo, setPlazo}) {
+function Formulario({cantidad, setCantidad, plazo, setPlazo, total, setTotal, setCargando}) {
 
     // Definir state
     const [error, setError] = useState(false)
@@ -31,12 +31,23 @@ function Formulario({cantidad, setCantidad, plazo, setPlazo}) {
         }
 
         // Eliminar el error previo
-        setError(false)
+        setError(false);
 
-        // Realizar la cotizacion
-        const total = calcularTotal(cantidad, parseInt(plazo))
+        // Habilitar spinner
+        setCargando(true)
 
-        console.log(total)
+        setTimeout(() => {
+            // Realizar la cotizacion
+            const total = calcularTotal(cantidad, parseInt(plazo))
+
+            // Cuando se calcule guardamos el total
+            setTotal(total)
+
+            // Deshabilitar spinner
+            setCargando(false)
+        }, 2000);
+
+        
     }
 
   return (
